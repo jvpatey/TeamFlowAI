@@ -2,7 +2,15 @@
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        onyx: "#393E41",
+        timberwolf: "#D3D0CB",
+        platinum: "#E7E5DF",
+        keppel: "#44BBA4",
+        saffron: "#E7BB41",
+      },
+    },
   },
   plugins: [],
 };
