@@ -1,5 +1,5 @@
 import { Routes, Route } from "react-router-dom";
-import WelcomePage from "./pages/WelcomePage";
+import { WelcomePage } from "./pages/WelcomePage";
 import DashboardPage from "./pages/DashboardPage";
 
 // Define the routes for the app
