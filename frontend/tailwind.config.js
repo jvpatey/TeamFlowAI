@@ -6,7 +6,7 @@ export default {
     extend: {
       colors: {
         onyx: "#393E41",
-        timberwolf: "#D3D0CB",
+        timberwolf: "#e3e1de",
         platinum: "#E7E5DF",
         keppel: "#44BBA4",
         keppelLight: "#78cebd",

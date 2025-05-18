@@ -1,3 +1,4 @@
+// custom background shapes for the welcome page
 export function WelcomeBackgroundShapes() {
   return (
     <div className="absolute inset-0 z-0 w-full h-full pointer-events-none">

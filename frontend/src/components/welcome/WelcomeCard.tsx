@@ -1,9 +1,9 @@
-import logoNoBg from "../assets/logo_no_bg.png";
-import { WelcomeButton } from "./welcome/WelcomeButton";
+import logoNoBg from "../../assets/logo_no_bg.png";
+import { WelcomeButton } from "./WelcomeButton";
 import { WelcomeFormField } from "./WelcomeFormField";
 import { WelcomeScreenshotBox } from "./WelcomeScreenshotBox";
 
-//`
+// WelcomeCard component for the welcome page
 export function WelcomeCard() {
   return (
     <div className="relative z-10 bg-timberwolf rounded-2xl shadow-lg p-4 max-w-[calc(100vw-2rem)] sm:max-w-xl box-border flex flex-col items-center mx-4 my-8 sm:mx-8 sm:my-12">
@@ -19,16 +19,13 @@ export function WelcomeCard() {
         A smarter way to write, organize, and plan — with docs, meetings, and
         tasks all in one AI-powered workspace.
       </p>
-      {/* Two-column layout for login and screenshot */}
       <div className="flex flex-col md:flex-row gap-6 w-full">
         {/* Login options (left) */}
         <div className="flex-1 flex flex-col gap-3 justify-center">
           <WelcomeButton className="bg-saffron text-onyx hover:bg-saffron/90">
-            {/* Placeholder icon */}
             <span className="i-mdi:github text-xl" /> Sign in with GitHub
           </WelcomeButton>
           <WelcomeButton className="bg-saffron text-onyx hover:bg-saffron/90">
-            {/* Placeholder icon */}
             <span className="i-mdi:google text-xl" /> Sign in with Google
           </WelcomeButton>
           <div className="flex items-center gap-2 my-2">

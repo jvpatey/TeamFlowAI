@@ -5,6 +5,7 @@ interface PageBackgroundProps {
   className?: string;
 }
 
+// PageBackground component for the page background throughout the app
 export function PageBackground({
   children,
   className = "",
