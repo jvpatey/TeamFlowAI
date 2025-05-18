@@ -4,11 +4,13 @@ import { WelcomeFormField } from "./WelcomeFormField";
 import { WelcomeScreenshotBox } from "./WelcomeScreenshotBox";
 import { FaGithub } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
+import { DarkModeToggle } from "../DarkModeToggle";
 
 // WelcomeCard component for the welcome page
 export function WelcomeCard() {
   return (
     <div className="relative z-10 bg-timberwolf rounded-2xl shadow-lg p-4 max-w-[calc(100vw-2rem)] sm:max-w-xl box-border flex flex-col items-center mx-4 my-8 sm:mx-8 sm:my-12">
+      <DarkModeToggle />
       <div className="flex items-center gap-2 mb-6 mt-4">
         <img
           src={logoNoBg}
