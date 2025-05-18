@@ -2,6 +2,8 @@ import logoNoBg from "../../assets/logo_no_bg.png";
 import { WelcomeButton } from "./WelcomeButton";
 import { WelcomeFormField } from "./WelcomeFormField";
 import { WelcomeScreenshotBox } from "./WelcomeScreenshotBox";
+import { FaGithub } from "react-icons/fa";
+import { FcGoogle } from "react-icons/fc";
 
 // WelcomeCard component for the welcome page
 export function WelcomeCard() {
@@ -23,10 +25,10 @@ export function WelcomeCard() {
         {/* Login options (left) */}
         <div className="flex-1 flex flex-col gap-3 justify-center">
           <WelcomeButton className="bg-saffron text-onyx hover:bg-saffron/90">
-            <span className="i-mdi:github text-xl" /> Sign in with GitHub
+            <FaGithub size={24} /> Sign in with GitHub
           </WelcomeButton>
           <WelcomeButton className="bg-saffron text-onyx hover:bg-saffron/90">
-            <span className="i-mdi:google text-xl" /> Sign in with Google
+            <FcGoogle size={24} /> Sign in with Google
           </WelcomeButton>
           <div className="flex items-center gap-2 my-2">
             <div className="flex-1 h-px bg-gray-300" />
