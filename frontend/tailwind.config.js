@@ -9,7 +9,7 @@ export default {
         timberwolf: "#D3D0CB",
         platinum: "#E7E5DF",
         keppel: "#44BBA4",
-        keppelLight: "#c3e9e2",
+        keppelLight: "#78cebd",
         saffron: "#E7BB41",
       },
     },
