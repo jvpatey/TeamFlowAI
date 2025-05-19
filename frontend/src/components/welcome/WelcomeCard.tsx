@@ -69,11 +69,7 @@ export function WelcomeCard() {
           </div>
           {/* Screenshot placeholder (right) */}
           <div className="flex-1 flex items-center justify-center">
-            <WelcomeScreenshotBox>
-              <span className="text-4xl text-onyx opacity-40">
-                [screenshot]
-              </span>
-            </WelcomeScreenshotBox>
+            <WelcomeScreenshotBox />
           </div>
         </div>
       </div>
