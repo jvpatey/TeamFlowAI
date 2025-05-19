@@ -8,8 +8,11 @@ import { WelcomeScreenshotBox } from "./WelcomeScreenshotBox";
 export function WelcomeCard() {
   return (
     <div className="relative z-10 card bg-timberwolf dark:bg-outerSpace shadow-xl max-w-[calc(100vw-2rem)] sm:max-w-xl mx-4 my-8 sm:mx-8 sm:my-12">
+      {/* Dark mode toggle */}
       <DarkModeToggle />
+      {/* Card body */}
       <div className="card-body items-center">
+        {/* Logo and title */}
         <div className="flex items-center gap-2 mb-4 mt-2">
           <img
             src={logoNoBg}
@@ -27,11 +30,15 @@ export function WelcomeCard() {
         <div className="flex flex-col md:flex-row gap-6 w-full">
           {/* Login options (left) */}
           <div className="flex-1 flex flex-col gap-3 justify-center">
-            <button className="btn btn-outline btn-lg w-full flex items-center gap-2 text-onyx dark:text-timberwolf border-saffron hover:bg-onyx hover:text-platinum dark:hover:bg-platinum dark:hover:text-onyx">
-              <FaGithub size={24} /> Sign in with GitHub
+            <button className="btn btn-outline btn-lg w-full flex items-center gap-2 text-onyx dark:text-timberwolf border-saffron btn-fill-right btn-saffron">
+              <span className="btn-content flex items-center gap-2">
+                <FaGithub size={24} /> Sign in with GitHub
+              </span>
             </button>
-            <button className="btn btn-outline btn-lg w-full flex items-center gap-2 text-onyx dark:text-timberwolf border-saffron hover:bg-onyx hover:text-platinum dark:hover:bg-platinum dark:hover:text-onyx">
-              <FcGoogle size={24} /> Sign in with Google
+            <button className="btn btn-outline btn-lg w-full flex items-center gap-2 text-onyx dark:text-timberwolf border-saffron btn-fill-right btn-saffron">
+              <span className="btn-content flex items-center gap-2">
+                <FcGoogle size={24} /> Sign in with Google
+              </span>
             </button>
             <div className="flex items-center gap-2 my-2">
               <div className="flex-1 h-px bg-gray-300" />
@@ -48,8 +55,10 @@ export function WelcomeCard() {
               placeholder="Password"
               className="input input-bordered w-full bg-white dark:bg-outerSpace text-onyx dark:text-timberwolf"
             />
-            <button className="btn btn-primary shadow-none border-none w-full  bg-keppel text-timberwolf dark:text-onyx hover:bg-keppel/90 dark:hover:bg-keppel/90">
-              Sign in
+            <button className="btn btn-primary shadow-none border-none w-full bg-keppel text-timberwolf dark:text-onyx hover:bg-keppel/90 dark:hover:bg-keppel/90 btn-fill-right btn-keppel mt-2">
+              <span className="btn-content flex items-center gap-2">
+                Sign in
+              </span>
             </button>
             <p className="text-xs text-center mt-2 text-onyx dark:text-timberwolf">
               Don't have an account?{" "}
