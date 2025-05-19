@@ -10,9 +10,9 @@ export function WelcomeScreenshotBox({
 }: WelcomeScreenshotBoxProps) {
   return (
     <div
-      className={`card card-bordered w-full h-40 md:h-56 bg-saffron rounded-xl flex items-center justify-center shadow-inner p-4 ${className}`}
+      className={`card card-bordered w-full min-h-28 max-h-64 aspect-[4/3] bg-saffron rounded-xl flex items-center justify-center shadow-inner p-2 sm:p-4 ${className}`}
     >
-      <div className="w-full h-full flex flex-col gap-2 justify-center">
+      <div className="w-full h-full flex flex-col gap-1 sm:gap-2 justify-center">
         {/* Document style content lines */}
         <div className="flex items-center gap-2 mb-1">
           <img
@@ -26,12 +26,12 @@ export function WelcomeScreenshotBox({
         <div className="bg-white/80 rounded-md h-4 w-2/3" />
         <div className="bg-white/60 rounded-md h-4 w-1/2" />
         {/* Trello board style cards */}
-        <div className="flex gap-2 mt-2">
+        <div className="flex gap-1 sm:gap-2 mt-2">
           <div className="bg-keppel/80 rounded-lg h-8 w-1/4" />
           <div className="bg-platinum/80 rounded-lg h-8 w-1/4" />
           <div className="bg-saffron/80 rounded-lg h-8 w-1/4" />
         </div>
-        <div className="flex gap-2">
+        <div className="flex gap-1 sm:gap-2">
           <div className="bg-keppel/60 rounded-lg h-6 w-1/6" />
           <div className="bg-platinum/60 rounded-lg h-6 w-1/6" />
         </div>
