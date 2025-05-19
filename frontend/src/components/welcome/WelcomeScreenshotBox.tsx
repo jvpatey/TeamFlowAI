@@ -12,7 +12,7 @@ export function WelcomeScreenshotBox({
 }: WelcomeScreenshotBoxProps) {
   return (
     <div
-      className={`w-full h-40 md:h-56 bg-saffron rounded-xl flex items-center justify-center shadow-inner ${className}`}
+      className={`card card-bordered w-full h-40 md:h-56 bg-saffron rounded-xl flex items-center justify-center shadow-inner ${className}`}
     >
       {children}
     </div>

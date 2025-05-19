@@ -14,7 +14,7 @@ export function WelcomeButton({
 }: WelcomeButtonProps) {
   return (
     <button
-      className={`flex items-center justify-center gap-2 font-semibold rounded-lg py-2 shadow transition ${className}`}
+      className={`btn btn-lg w-full flex items-center justify-center gap-2 font-semibold rounded-lg transition-colors duration-200 ease-in-out ${className}`}
       {...props}
     >
       {children}
