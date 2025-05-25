@@ -3,9 +3,12 @@ import { FaGithub } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import { DarkModeToggle } from "../DarkModeToggle";
 import { WelcomeScreenshotBox } from "./WelcomeScreenshotBox";
+import { useNavigate } from "react-router-dom";
 
 // WelcomeCard component for the welcome page
 export function WelcomeCard() {
+  const navigate = useNavigate();
+
   return (
     <div className="relative z-10 card bg-timberwolf dark:bg-outerSpace shadow-xl max-w-[calc(100vw-2rem)] sm:max-w-xl mx-4 my-8 sm:mx-8 sm:my-12">
       {/* Dark mode toggle */}
@@ -55,7 +58,10 @@ export function WelcomeCard() {
               placeholder="Password"
               className="input input-bordered w-full bg-white dark:bg-outerSpace text-onyx dark:text-timberwolf"
             />
-            <button className="btn btn-primary shadow-none border-none w-full bg-keppel text-timberwolf dark:text-onyx hover:bg-keppel/90 dark:hover:bg-keppel/90 btn-fill-right btn-keppel mt-2">
+            <button
+              onClick={() => navigate("/dashboard")}
+              className="btn btn-primary shadow-none border-none w-full bg-keppel text-timberwolf dark:text-onyx hover:bg-keppel/90 dark:hover:bg-keppel/90 btn-fill-right btn-keppel mt-2"
+            >
               <span className="btn-content flex items-center gap-2">
                 Sign in
               </span>
