@@ -1,45 +1,34 @@
-import { FaUser } from "react-icons/fa";
+import { FaUser, FaBars } from "react-icons/fa";
 import logoNoBg from "../../assets/logo_no_bg.png";
 import { DarkModeToggle } from "../DarkModeToggle";
+import { Link } from "react-router-dom";
 
-// Navbar component for the navigation bar
+// Navbar component for nav throughout the app
 export function Navbar() {
   return (
     <div className="navbar bg-timberwolf dark:bg-outerSpace shadow-lg">
-      {/* Left side - Dropdown */}
+      {/* Left side - Dropdown menu */}
       <div className="navbar-start">
         <div className="dropdown">
-          <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-5 w-5"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M4 6h16M4 12h8m-8 6h16"
-              />
-            </svg>
+          <div
+            tabIndex={1}
+            role="button"
+            className="btn btn-ghost btn-circle text-onyx dark:text-timberwolf"
+          >
+            <FaBars size={20} color="currentColor" />
           </div>
           <ul
-            tabIndex={0}
+            tabIndex={1}
             className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-timberwolf dark:bg-outerSpace rounded-box w-52"
           >
             <li>
               <a className="text-onyx dark:text-timberwolf">Dashboard</a>
             </li>
             <li>
-              <a className="text-onyx dark:text-timberwolf">Projects</a>
+              <a className="text-onyx dark:text-timberwolf">Account</a>
             </li>
             <li>
-              <a className="text-onyx dark:text-timberwolf">Team</a>
-            </li>
-            <li>
-              <a className="text-onyx dark:text-timberwolf">Settings</a>
+              <a className="text-onyx dark:text-timberwolf">Sign out</a>
             </li>
           </ul>
         </div>
@@ -47,7 +36,10 @@ export function Navbar() {
 
       {/* Center - Logo */}
       <div className="navbar-center">
-        <a className="flex items-center gap-2">
+        <Link
+          to="/dashboard"
+          className="flex items-center gap-2 transition-transform duration-150 hover:scale-105 group"
+        >
           <img
             src={logoNoBg}
             alt="TeamFlowAI Logo"
@@ -56,35 +48,19 @@ export function Navbar() {
           <span className="text-xl font-bold text-onyx dark:text-timberwolf">
             TeamFlowAI
           </span>
-        </a>
+        </Link>
       </div>
 
-      {/* Right side - Icons */}
+      {/* Right side - User and Dark Mode */}
       <div className="navbar-end flex items-center gap-4">
+        <button
+          className="btn btn-ghost btn-circle avatar text-onyx dark:text-timberwolf"
+          aria-label="User menu"
+          type="button"
+        >
+          <FaUser size={20} />
+        </button>
         <DarkModeToggle />
-        <div className="dropdown dropdown-end">
-          <div
-            tabIndex={0}
-            role="button"
-            className="btn btn-ghost btn-circle avatar text-onyx dark:text-timberwolf"
-          >
-            <FaUser size={20} />
-          </div>
-          <ul
-            tabIndex={0}
-            className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-timberwolf dark:bg-outerSpace rounded-box w-52"
-          >
-            <li>
-              <a className="text-onyx dark:text-timberwolf">Profile</a>
-            </li>
-            <li>
-              <a className="text-onyx dark:text-timberwolf">Settings</a>
-            </li>
-            <li>
-              <a className="text-onyx dark:text-timberwolf">Logout</a>
-            </li>
-          </ul>
-        </div>
       </div>
     </div>
   );
