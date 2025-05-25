@@ -12,7 +12,9 @@ export function WelcomeCard() {
   return (
     <div className="relative z-10 card bg-timberwolf dark:bg-outerSpace shadow-xl max-w-[calc(100vw-2rem)] sm:max-w-xl mx-4 my-8 sm:mx-8 sm:my-12">
       {/* Dark mode toggle */}
-      <DarkModeToggle />
+      <div className="absolute top-4 right-4">
+        <DarkModeToggle />
+      </div>
       {/* Card body */}
       <div className="card-body items-center">
         {/* Logo and title */}
