@@ -2,3 +2,77 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Fill from right effect for buttons */
+.btn-fill-right {
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
+  transition: color 0.3s;
+}
+.btn-fill-right .btn-content {
+  position: relative;
+  z-index: 2;
+  transition: color 0.3s;
+}
+.btn-fill-right.btn-saffron {
+  background: transparent;
+  color: #393e41;
+}
+.btn-fill-right.btn-keppel {
+  background: #44bba4;
+  color: #fff;
+}
+.btn-fill-right.btn-saffron.dark {
+  background: transparent;
+  color: #393e41;
+}
+.btn-fill-right.btn-keppel.dark {
+  background: #44bba4;
+  color: #393e41;
+}
+.btn-fill-right.btn-saffron::after {
+  background: #e7bb41;
+}
+.btn-fill-right.btn-keppel::after {
+  background: #393e41;
+}
+.btn-fill-right.btn-saffron.dark::after {
+  background: #e7bb41;
+}
+.btn-fill-right.btn-keppel.dark::after {
+  background: #e7e5df;
+}
+.btn-fill-right::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  z-index: 1;
+  transition: width 0.7s;
+  opacity: 1;
+}
+.btn-fill-right:hover::after,
+.btn-fill-right:focus::after {
+  width: 100%;
+  opacity: 1;
+}
+.btn-fill-right.btn-saffron:hover .btn-content,
+.btn-fill-right.btn-saffron:focus .btn-content {
+  color: #393e41 !important;
+}
+.btn-fill-right.btn-keppel:hover .btn-content,
+.btn-fill-right.btn-keppel:focus .btn-content {
+  color: #fff !important;
+}
+.btn-fill-right.btn-saffron.dark:hover .btn-content,
+.btn-fill-right.btn-saffron.dark:focus .btn-content {
+  color: #393e41 !important;
+}
+.btn-fill-right.btn-keppel.dark:hover .btn-content,
+.btn-fill-right.btn-keppel.dark:focus .btn-content {
+  color: #393e41 !important;
+}
