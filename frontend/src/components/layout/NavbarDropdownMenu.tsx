@@ -1,4 +1,3 @@
-// NavbarDropdownMenu component for the navbar dropdown menu
 export function NavbarDropdownMenu() {
   return (
     <ul

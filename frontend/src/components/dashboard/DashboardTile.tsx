@@ -23,15 +23,13 @@ export function DashboardTile({
       onClick={onClick}
       type="button"
     >
-      <div className="mb-4 text-4xl text-white/90 dark:text-onyx/90">
-        {icon}
-      </div>
+      <div className="mb-4 text-6xl text-white/90 dark:text-onyx">{icon}</div>
       <div className="text-center">
-        <div className="text-xl font-bold text-white dark:text-onyx mb-1">
+        <div className="text-2xl font-bold text-white dark:text-onyx mb-1">
           {title}
         </div>
         {subtitle && (
-          <div className="text-white/80 dark:text-onyx/80 text-sm font-medium">
+          <div className="text-white/80 dark:text-onyx/80 text-md font-medium">
             {subtitle}
           </div>
         )}

@@ -1,5 +1,5 @@
 import { DashboardTile } from "./DashboardTile";
-import { FaFileAlt, FaCheckCircle, FaMicrophone } from "react-icons/fa";
+import { FaFileAlt, FaTrello, FaMicrophone } from "react-icons/fa";
 
 // DashboardTiles component for the dashboard page
 export function DashboardTiles() {
@@ -13,7 +13,7 @@ export function DashboardTiles() {
         onClick={() => {}}
       />
       <DashboardTile
-        icon={<FaCheckCircle />}
+        icon={<FaTrello />}
         title="Task Board"
         subtitle="with auto subtasks"
         bgColor="bg-saffron"
