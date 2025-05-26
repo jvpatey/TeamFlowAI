@@ -1,3 +1,4 @@
+// NavbarDropdownMenu component for the navbar dropdown menu
 export function NavbarDropdownMenu() {
   return (
     <ul
@@ -6,12 +7,27 @@ export function NavbarDropdownMenu() {
     >
       <li>
         <a className="text-onyx dark:text-timberwolf rounded-md transition-colors duration-150 hover:bg-keppel/80 hover:text-white dark:hover:bg-keppel/80 dark:hover:text-onyx">
+          Account
+        </a>
+      </li>
+      <li>
+        <a className="text-onyx dark:text-timberwolf rounded-md transition-colors duration-150 hover:bg-keppel/80 hover:text-white dark:hover:bg-keppel/80 dark:hover:text-onyx">
           Dashboard
         </a>
       </li>
       <li>
         <a className="text-onyx dark:text-timberwolf rounded-md transition-colors duration-150 hover:bg-keppel/80 hover:text-white dark:hover:bg-keppel/80 dark:hover:text-onyx">
-          Account
+          Smart Docs
+        </a>
+      </li>
+      <li>
+        <a className="text-onyx dark:text-timberwolf rounded-md transition-colors duration-150 hover:bg-keppel/80 hover:text-white dark:hover:bg-keppel/80 dark:hover:text-onyx">
+          Task Board
+        </a>
+      </li>
+      <li>
+        <a className="text-onyx dark:text-timberwolf rounded-md transition-colors duration-150 hover:bg-keppel/80 hover:text-white dark:hover:bg-keppel/80 dark:hover:text-onyx">
+          Meeting Summaries
         </a>
       </li>
       <li>

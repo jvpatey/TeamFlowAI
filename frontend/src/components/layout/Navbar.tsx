@@ -33,7 +33,7 @@ export function Navbar() {
             alt="TeamFlowAI Logo"
             className="w-8 h-8 object-contain"
           />
-          <span className="text-xl font-bold text-onyx dark:text-timberwolf">
+          <span className="text-2xl font-bold text-onyx dark:text-timberwolf">
             TeamFlowAI
           </span>
         </Link>
