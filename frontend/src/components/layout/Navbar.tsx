@@ -41,13 +41,13 @@ export function Navbar() {
 
       {/* Right side - User and Dark Mode */}
       <div className="navbar-end flex items-center gap-4">
-        <button
+        <Link
+          to="/account"
           className="p-2 avatar text-onyx dark:text-timberwolf hover:bg-keppel/20 dark:hover:bg-keppel/30 hover:scale-110 transition duration-150 rounded-full border-none outline-none"
           aria-label="User menu"
-          type="button"
         >
           <FaUser size={20} />
-        </button>
+        </Link>
         <DarkModeToggle />
       </div>
     </div>
