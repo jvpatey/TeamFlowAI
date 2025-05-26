@@ -13,22 +13,28 @@ export function Navbar() {
           <div
             tabIndex={1}
             role="button"
-            className="btn btn-ghost btn-circle text-onyx dark:text-timberwolf"
+            className="p-2 text-onyx dark:text-timberwolf hover:bg-keppel/20 dark:hover:bg-keppel/30 hover:scale-110 transition duration-150 rounded-full border-none outline-none"
           >
             <FaBars size={20} color="currentColor" />
           </div>
           <ul
             tabIndex={1}
-            className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-timberwolf dark:bg-outerSpace rounded-box w-52"
+            className="menu menu-md dropdown-content mt-3 z-[1] p-2 shadow bg-timberwolf dark:bg-outerSpace rounded-box w-52"
           >
             <li>
-              <a className="text-onyx dark:text-timberwolf">Dashboard</a>
+              <a className="text-onyx dark:text-timberwolf rounded-md transition-colors duration-150 hover:bg-keppel/80 hover:text-white dark:hover:bg-keppel/80 dark:hover:text-onyx">
+                Dashboard
+              </a>
             </li>
             <li>
-              <a className="text-onyx dark:text-timberwolf">Account</a>
+              <a className="text-onyx dark:text-timberwolf rounded-md transition-colors duration-150 hover:bg-keppel/80 hover:text-white dark:hover:bg-keppel/80 dark:hover:text-onyx">
+                Account
+              </a>
             </li>
             <li>
-              <a className="text-onyx dark:text-timberwolf">Sign out</a>
+              <a className="text-onyx dark:text-timberwolf rounded-md transition-colors duration-150 hover:bg-keppel/80 hover:text-white dark:hover:bg-keppel/80 dark:hover:text-onyx">
+                Sign out
+              </a>
             </li>
           </ul>
         </div>
@@ -54,7 +60,7 @@ export function Navbar() {
       {/* Right side - User and Dark Mode */}
       <div className="navbar-end flex items-center gap-4">
         <button
-          className="btn btn-ghost btn-circle avatar text-onyx dark:text-timberwolf"
+          className="p-2 avatar text-onyx dark:text-timberwolf hover:bg-keppel/20 dark:hover:bg-keppel/30 hover:scale-110 transition duration-150 rounded-full border-none outline-none"
           aria-label="User menu"
           type="button"
         >
