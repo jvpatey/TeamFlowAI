@@ -2,6 +2,7 @@ import { FaUser, FaBars } from "react-icons/fa";
 import logoNoBg from "../../assets/logo_no_bg.png";
 import { DarkModeToggle } from "../DarkModeToggle";
 import { Link } from "react-router-dom";
+import { NavbarDropdownMenu } from "./NavbarDropdownMenu";
 
 // Navbar component for nav throughout the app
 export function Navbar() {
@@ -17,26 +18,7 @@ export function Navbar() {
           >
             <FaBars size={20} color="currentColor" />
           </div>
-          <ul
-            tabIndex={1}
-            className="menu menu-md dropdown-content mt-3 z-[1] p-2 shadow bg-timberwolf dark:bg-outerSpace rounded-box w-52"
-          >
-            <li>
-              <a className="text-onyx dark:text-timberwolf rounded-md transition-colors duration-150 hover:bg-keppel/80 hover:text-white dark:hover:bg-keppel/80 dark:hover:text-onyx">
-                Dashboard
-              </a>
-            </li>
-            <li>
-              <a className="text-onyx dark:text-timberwolf rounded-md transition-colors duration-150 hover:bg-keppel/80 hover:text-white dark:hover:bg-keppel/80 dark:hover:text-onyx">
-                Account
-              </a>
-            </li>
-            <li>
-              <a className="text-onyx dark:text-timberwolf rounded-md transition-colors duration-150 hover:bg-keppel/80 hover:text-white dark:hover:bg-keppel/80 dark:hover:text-onyx">
-                Sign out
-              </a>
-            </li>
-          </ul>
+          <NavbarDropdownMenu />
         </div>
       </div>
 
