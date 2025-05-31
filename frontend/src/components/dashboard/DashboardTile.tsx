@@ -19,12 +19,14 @@ export function DashboardTile({
 }: DashboardTileProps) {
   return (
     <button
-      className={`flex flex-col items-center justify-center aspect-square max-w-xs w-full p-6 rounded-2xl shadow-md transition-transform duration-150 hover:scale-105 hover:shadow-lg focus:outline-none ${bgColor}`}
+      className={`group flex flex-col items-center justify-center aspect-square max-w-xs w-full p-6 rounded-2xl shadow-md transition-shadow duration-150 hover:shadow-lg focus:outline-none ${bgColor}`}
       onClick={onClick}
       type="button"
     >
-      <div className="mb-4 text-6xl text-white/90 dark:text-onyx">{icon}</div>
-      <div className="text-center">
+      <div className="mb-4 text-6xl text-white/90 dark:text-onyx transition-transform duration-150 group-hover:scale-110">
+        {icon}
+      </div>
+      <div className="text-center transition-transform duration-150 group-hover:scale-110">
         <div className="text-2xl font-bold text-white dark:text-onyx mb-1">
           {title}
         </div>

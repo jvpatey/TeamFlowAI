@@ -1,5 +1,5 @@
 import logoNoBg from "../../assets/logo_no_bg.png";
-import { FaGithub } from "react-icons/fa";
+import { FaGithub, FaSignInAlt } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import { DarkModeToggle } from "../DarkModeToggle";
 import { WelcomeScreenshotBox } from "./WelcomeScreenshotBox";
@@ -61,16 +61,27 @@ export function WelcomeCard() {
               className="input input-bordered w-full bg-white dark:bg-outerSpace text-onyx dark:text-timberwolf"
             />
             <button
+              type="button"
+              className="text-keppel font-semibold text-xs ml-auto mb-1 hover:text-saffron hover:underline transition-colors"
+              style={{ background: "none", border: "none", boxShadow: "none" }}
+              onClick={() => {}}
+            >
+              Forgot password?
+            </button>
+            <button
               onClick={() => navigate("/dashboard")}
-              className="btn btn-primary shadow-none border-none w-full bg-keppel text-timberwolf dark:text-onyx hover:bg-keppel/90 dark:hover:bg-keppel/90 btn-fill-right btn-keppel mt-2"
+              className="btn btn-primary shadow-none border-none w-full bg-keppel text-timberwolf dark:text-onyx hover:bg-keppel/90 dark:hover:bg-keppel/90 btn-fill-right btn-keppel mt-1"
             >
               <span className="btn-content flex items-center gap-2">
-                Sign in
+                <FaSignInAlt size={20} /> Sign in
               </span>
             </button>
             <p className="text-xs text-center mt-2 text-onyx dark:text-timberwolf">
               Don't have an account?{" "}
-              <a href="#" className="text-keppel font-semibold hover:underline">
+              <a
+                href="#"
+                className="text-keppel font-semibold hover:text-saffron"
+              >
                 Sign up
               </a>
             </p>
