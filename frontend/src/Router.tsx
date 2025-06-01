@@ -6,30 +6,62 @@ import SmartDocsPage from "./pages/SmartDocsPage";
 import TaskBoardPage from "./pages/TaskBoardPage";
 import MeetingSummariesPage from "./pages/MeetingSummariesPage";
 import AboutPage from "./pages/AboutPage";
+import { ProtectedRoute } from "./components/auth/ProtectedRoute";
 
 // Define the routes for the app
 const AppRouter = () => (
   <Routes>
-    {/* Welcome page */}
+    {/* Welcome page - public */}
     <Route path="/" element={<WelcomePage />} />
 
-    {/* Dashboard page */}
-    <Route path="/dashboard" element={<DashboardPage />} />
-
-    {/* Account page */}
-    <Route path="/account" element={<AccountPage />} />
-
-    {/* Smart Docs page */}
-    <Route path="/smart-docs" element={<SmartDocsPage />} />
-
-    {/* Task Board page */}
-    <Route path="/task-board" element={<TaskBoardPage />} />
-
-    {/* Meeting Summaries page */}
-    <Route path="/meeting-summaries" element={<MeetingSummariesPage />} />
-
-    {/* About page */}
+    {/* About page - public */}
     <Route path="/about" element={<AboutPage />} />
+
+    {/* Protected routes - require authentication */}
+    <Route
+      path="/dashboard"
+      element={
+        <ProtectedRoute>
+          <DashboardPage />
+        </ProtectedRoute>
+      }
+    />
+
+    <Route
+      path="/account"
+      element={
+        <ProtectedRoute>
+          <AccountPage />
+        </ProtectedRoute>
+      }
+    />
+
+    <Route
+      path="/smart-docs"
+      element={
+        <ProtectedRoute>
+          <SmartDocsPage />
+        </ProtectedRoute>
+      }
+    />
+
+    <Route
+      path="/task-board"
+      element={
+        <ProtectedRoute>
+          <TaskBoardPage />
+        </ProtectedRoute>
+      }
+    />
+
+    <Route
+      path="/meeting-summaries"
+      element={
+        <ProtectedRoute>
+          <MeetingSummariesPage />
+        </ProtectedRoute>
+      }
+    />
   </Routes>
 );
 
