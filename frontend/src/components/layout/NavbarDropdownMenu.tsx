@@ -1,6 +1,22 @@
 import { Link } from "react-router-dom";
+import { useClerk } from "@clerk/clerk-react";
+import {
+  FaUser,
+  FaThLarge,
+  FaFileAlt,
+  FaTrello,
+  FaMicrophone,
+  FaInfoCircle,
+  FaSignOutAlt,
+} from "react-icons/fa";
 
 export function NavbarDropdownMenu() {
+  const { signOut } = useClerk();
+
+  const handleSignOut = () => {
+    signOut({ redirectUrl: "/" });
+  };
+
   return (
     <ul
       tabIndex={1}
@@ -8,59 +24,59 @@ export function NavbarDropdownMenu() {
     >
       <li>
         <Link
-          to="/account"
-          className="text-onyx dark:text-timberwolf rounded-md transition-colors duration-150 hover:bg-keppel/80 hover:text-white dark:hover:bg-keppel/80 dark:hover:text-onyx"
+          to="/about"
+          className="flex items-center gap-2 text-onyx dark:text-timberwolf rounded-md transition-colors duration-150 hover:bg-keppel/80 hover:text-white dark:hover:bg-keppel/80 dark:hover:text-onyx"
         >
-          Account
+          <FaInfoCircle /> About
+        </Link>
+      </li>
+      <li>
+        <Link
+          to="/account"
+          className="flex items-center gap-2 text-onyx dark:text-timberwolf rounded-md transition-colors duration-150 hover:bg-keppel/80 hover:text-white dark:hover:bg-keppel/80 dark:hover:text-onyx"
+        >
+          <FaUser /> Account
         </Link>
       </li>
       <li>
         <Link
           to="/dashboard"
-          className="text-onyx dark:text-timberwolf rounded-md transition-colors duration-150 hover:bg-keppel/80 hover:text-white dark:hover:bg-keppel/80 dark:hover:text-onyx"
+          className="flex items-center gap-2 text-onyx dark:text-timberwolf rounded-md transition-colors duration-150 hover:bg-keppel/80 hover:text-white dark:hover:bg-keppel/80 dark:hover:text-onyx"
         >
-          Dashboard
+          <FaThLarge /> Dashboard
         </Link>
       </li>
       <li>
         <Link
           to="/smart-docs"
-          className="text-onyx dark:text-timberwolf rounded-md transition-colors duration-150 hover:bg-keppel/80 hover:text-white dark:hover:bg-keppel/80 dark:hover:text-onyx"
+          className="flex items-center gap-2 text-onyx dark:text-timberwolf rounded-md transition-colors duration-150 hover:bg-keppel/80 hover:text-white dark:hover:bg-keppel/80 dark:hover:text-onyx"
         >
-          Smart Docs
+          <FaFileAlt /> Smart Docs
         </Link>
       </li>
       <li>
         <Link
           to="/task-board"
-          className="text-onyx dark:text-timberwolf rounded-md transition-colors duration-150 hover:bg-keppel/80 hover:text-white dark:hover:bg-keppel/80 dark:hover:text-onyx"
+          className="flex items-center gap-2 text-onyx dark:text-timberwolf rounded-md transition-colors duration-150 hover:bg-keppel/80 hover:text-white dark:hover:bg-keppel/80 dark:hover:text-onyx"
         >
-          Task Board
+          <FaTrello /> Task Board
         </Link>
       </li>
       <li>
         <Link
           to="/meeting-summaries"
-          className="text-onyx dark:text-timberwolf rounded-md transition-colors duration-150 hover:bg-keppel/80 hover:text-white dark:hover:bg-keppel/80 dark:hover:text-onyx"
+          className="flex items-center gap-2 text-onyx dark:text-timberwolf rounded-md transition-colors duration-150 hover:bg-keppel/80 hover:text-white dark:hover:bg-keppel/80 dark:hover:text-onyx"
         >
-          Meeting Summaries
+          <FaMicrophone /> Meeting Summaries
         </Link>
       </li>
       <li>
-        <Link
-          to="/about"
-          className="text-onyx dark:text-timberwolf rounded-md transition-colors duration-150 hover:bg-keppel/80 hover:text-white dark:hover:bg-keppel/80 dark:hover:text-onyx"
+        <button
+          onClick={handleSignOut}
+          className="flex items-center gap-2 text-onyx dark:text-timberwolf rounded-md transition-colors duration-150 hover:bg-keppel/80 hover:text-white dark:hover:bg-keppel/80 dark:hover:text-onyx w-full text-left"
         >
-          About
-        </Link>
-      </li>
-      <li>
-        <Link
-          to="/"
-          className="text-onyx dark:text-timberwolf rounded-md transition-colors duration-150 hover:bg-keppel/80 hover:text-white dark:hover:bg-keppel/80 dark:hover:text-onyx"
-        >
-          Sign out
-        </Link>
+          <FaSignOutAlt /> Sign out
+        </button>
       </li>
     </ul>
   );

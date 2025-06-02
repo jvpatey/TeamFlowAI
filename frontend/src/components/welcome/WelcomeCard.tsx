@@ -1,13 +1,13 @@
 import logoNoBg from "../../assets/logo_no_bg.png";
-import { FaGithub } from "react-icons/fa";
+import { FaGithub, FaSignInAlt } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import { DarkModeToggle } from "../DarkModeToggle";
 import { WelcomeScreenshotBox } from "./WelcomeScreenshotBox";
-import { useNavigate } from "react-router-dom";
+import { useAuthModal } from "../../context/AuthModalProvider";
 
 // WelcomeCard component for the welcome page
 export function WelcomeCard() {
-  const navigate = useNavigate();
+  const { openSignIn, openSignUp } = useAuthModal();
 
   return (
     <div className="relative z-10 card bg-timberwolf dark:bg-outerSpace shadow-xl max-w-[calc(100vw-2rem)] sm:max-w-xl mx-4 my-8 sm:mx-8 sm:my-12">
@@ -50,29 +50,28 @@ export function WelcomeCard() {
               <span className="text-xs text-gray-400">or</span>
               <div className="flex-1 h-px bg-gray-300" />
             </div>
-            <input
-              type="text"
-              placeholder="Email"
-              className="input input-bordered w-full bg-white dark:bg-outerSpace text-onyx dark:text-timberwolf"
-            />
-            <input
-              type="password"
-              placeholder="Password"
-              className="input input-bordered w-full bg-white dark:bg-outerSpace text-onyx dark:text-timberwolf"
-            />
             <button
-              onClick={() => navigate("/dashboard")}
-              className="btn btn-primary shadow-none border-none w-full bg-keppel text-timberwolf dark:text-onyx hover:bg-keppel/90 dark:hover:bg-keppel/90 btn-fill-right btn-keppel mt-2"
+              onClick={openSignIn}
+              className="btn btn-primary shadow-none border-none w-full bg-keppel text-timberwolf dark:text-onyx hover:bg-keppel/90 dark:hover:bg-keppel/90 btn-fill-right btn-keppel mt-1"
             >
               <span className="btn-content flex items-center gap-2">
-                Sign in
+                <FaSignInAlt size={20} /> Sign in
               </span>
             </button>
             <p className="text-xs text-center mt-2 text-onyx dark:text-timberwolf">
               Don't have an account?{" "}
-              <a href="#" className="text-keppel font-semibold hover:underline">
+              <button
+                type="button"
+                onClick={openSignUp}
+                className="text-keppel font-semibold hover:text-saffron hover:underline transition-colors bg-transparent border-none p-0 m-0"
+                style={{
+                  background: "none",
+                  border: "none",
+                  boxShadow: "none",
+                }}
+              >
                 Sign up
-              </a>
+              </button>
             </p>
           </div>
           {/* Screenshot placeholder (right) */}

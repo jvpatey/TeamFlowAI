@@ -1,7 +1,23 @@
 import { BrowserRouter as Router, useLocation } from "react-router-dom";
 import AppRouter from "./Router";
 import { DarkModeProvider } from "./context/DarkModeProvider";
+import { AuthModalProvider, useAuthModal } from "./context/AuthModalProvider";
 import { Navbar } from "./components/layout/Navbar";
+import { SignInModal } from "./components/auth/SignInModal";
+import { SignUpModal } from "./components/auth/SignUpModal";
+
+// AuthModals component to render the modals
+function AuthModals() {
+  const { isSignInOpen, isSignUpOpen, closeSignIn, closeSignUp } =
+    useAuthModal();
+
+  return (
+    <>
+      <SignInModal isOpen={isSignInOpen} onClose={closeSignIn} />
+      <SignUpModal isOpen={isSignUpOpen} onClose={closeSignUp} />
+    </>
+  );
+}
 
 // AppContent component to handle the navbar visibility
 function AppContent() {
@@ -12,6 +28,7 @@ function AppContent() {
     <>
       {!hideNavbar && <Navbar />}
       <AppRouter />
+      <AuthModals />
     </>
   );
 }
@@ -20,9 +37,11 @@ function AppContent() {
 function App() {
   return (
     <DarkModeProvider>
-      <Router>
-        <AppContent />
-      </Router>
+      <AuthModalProvider>
+        <Router>
+          <AppContent />
+        </Router>
+      </AuthModalProvider>
     </DarkModeProvider>
   );
 }
