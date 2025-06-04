@@ -1,6 +1,7 @@
 import { PageBackground } from "../components/layout/PageBackground";
 import { useAuthModal } from "../context/AuthModalProvider";
 import { FeatureCard } from "../components/welcome/FeatureCard";
+import { DarkModeToggle } from "../components/DarkModeToggle";
 import { FaFileAlt, FaTasks, FaMicrophone } from "react-icons/fa";
 import logoNoBg from "../assets/logo_no_bg.png";
 
@@ -47,6 +48,11 @@ export function WelcomePage() {
 
   return (
     <PageBackground className="py-6">
+      {/* Dark Mode Toggle - Top Right Corner */}
+      <div className="fixed top-4 right-4 z-10">
+        <DarkModeToggle />
+      </div>
+
       <div className="container mx-auto px-4 h-screen flex flex-col justify-center">
         {/* Hero Section */}
         <div className="text-center mb-10">
@@ -77,13 +83,13 @@ export function WelcomePage() {
           <div className="flex flex-col sm:flex-row gap-3 justify-center mb-8">
             <button
               onClick={openSignUp}
-              className="btn btn-lg bg-blue-600 hover:bg-blue-700 text-white border-none px-6 py-2 rounded-lg font-semibold transition-all duration-200 shadow-lg hover:shadow-xl"
+              className="btn btn-lg bg-white dark:bg-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600 text-onyx dark:text-white border-2 border-keppel hover:border-keppelLight px-6 py-2 rounded-lg font-semibold transition-all duration-300 shadow-lg transform hover:scale-105"
             >
               Get started for free
             </button>
             <button
               onClick={openSignIn}
-              className="btn btn-lg btn-outline border-gray-300 dark:border-gray-600 text-onyx dark:text-timberwolf hover:bg-gray-100 dark:hover:bg-gray-800 px-6 py-2 rounded-lg font-semibold transition-all duration-200"
+              className="btn btn-lg bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 text-onyx dark:text-white border-2 border-keppel hover:border-keppelLight px-6 py-2 rounded-lg font-semibold transition-all duration-300 shadow-lg transform hover:scale-105"
             >
               Sign in
             </button>
