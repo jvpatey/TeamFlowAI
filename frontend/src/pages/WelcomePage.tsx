@@ -47,27 +47,27 @@ export function WelcomePage() {
   const { openSignIn, openSignUp } = useAuthModal();
 
   return (
-    <PageBackground className="py-6">
+    <PageBackground className="py-4 sm:py-6">
       {/* Dark Mode Toggle - Top Right Corner */}
-      <div className="fixed top-4 right-4 z-10">
+      <div className="fixed top-3 right-3 sm:top-4 sm:right-4 z-10">
         <DarkModeToggle />
       </div>
 
-      <div className="container mx-auto px-4 h-screen flex flex-col justify-center">
+      <div className="container mx-auto px-4 min-h-screen flex flex-col justify-center">
         {/* Hero Section */}
-        <div className="text-center mb-10">
-          <div className="flex items-center justify-center gap-4 mb-6">
+        <div className="text-center mb-8 sm:mb-10">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mb-4 sm:mb-6">
             <img
               src={logoNoBg}
               alt="TeamFlowAI Logo"
-              className="w-14 h-14 object-contain"
+              className="w-12 h-12 sm:w-14 sm:h-14 object-contain"
             />
-            <h1 className="text-5xl md:text-6xl font-bold text-onyx dark:text-timberwolf">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-onyx dark:text-timberwolf">
               TeamFlowAI
             </h1>
           </div>
 
-          <h2 className="text-3xl md:text-4xl font-bold text-onyx dark:text-timberwolf mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-onyx dark:text-timberwolf mb-3 sm:mb-4 px-2">
             Think, plan, and track
             <br />
             <span className="text-gray-500 dark:text-gray-400">
@@ -75,21 +75,21 @@ export function WelcomePage() {
             </span>
           </h2>
 
-          <p className="text-lg text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300 mb-6 sm:mb-8 max-w-2xl mx-auto px-4">
             A smarter way to write, organize, and plan — with docs, meetings,
             and tasks all in one AI-powered workspace.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-3 justify-center mb-8">
+          <div className="flex flex-col sm:flex-row gap-3 justify-center mb-6 sm:mb-8 px-4">
             <button
               onClick={openSignUp}
-              className="btn btn-lg bg-white dark:bg-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600 text-onyx dark:text-white border-2 border-keppel hover:border-keppelLight px-6 py-2 rounded-lg font-semibold transition-all duration-300 shadow-lg transform hover:scale-105"
+              className="btn btn-md sm:btn-lg bg-white dark:bg-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600 text-onyx dark:text-white border-2 border-keppel hover:border-keppelLight px-4 sm:px-6 py-2 rounded-lg font-semibold transition-all duration-300 shadow-lg transform hover:scale-105 w-full sm:w-auto"
             >
               Get started for free
             </button>
             <button
               onClick={openSignIn}
-              className="btn btn-lg bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 text-onyx dark:text-white border-2 border-keppel hover:border-keppelLight px-6 py-2 rounded-lg font-semibold transition-all duration-300 shadow-lg transform hover:scale-105"
+              className="btn btn-md sm:btn-lg bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 text-onyx dark:text-white border-2 border-keppel hover:border-keppelLight px-4 sm:px-6 py-2 rounded-lg font-semibold transition-all duration-300 shadow-lg transform hover:scale-105 w-full sm:w-auto"
             >
               Sign in
             </button>
@@ -97,7 +97,7 @@ export function WelcomePage() {
         </div>
 
         {/* Feature Cards */}
-        <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 max-w-5xl mx-auto w-full">
           {features.map((feature) => (
             <FeatureCard
               key={feature.id}

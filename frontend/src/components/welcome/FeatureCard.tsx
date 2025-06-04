@@ -24,16 +24,16 @@ export function FeatureCard({
         hasScaleEffect ? "transform hover:scale-105" : ""
       }`}
     >
-      <div className="card-body text-center p-7">
+      <div className="card-body text-center p-5 sm:p-7">
         <div
-          className={`w-14 h-14 ${iconBgColor} rounded-lg flex items-center justify-center mx-auto mb-4`}
+          className={`w-12 h-12 sm:w-14 sm:h-14 ${iconBgColor} rounded-lg flex items-center justify-center mx-auto mb-3 sm:mb-4`}
         >
           <div className={iconColor}>{icon}</div>
         </div>
-        <h3 className="text-xl font-bold text-onyx dark:text-timberwolf mb-3">
+        <h3 className="text-lg sm:text-xl font-bold text-onyx dark:text-timberwolf mb-2 sm:mb-3">
           {title}
         </h3>
-        <p className="text-sm text-gray-600 dark:text-gray-300">
+        <p className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
           {description}
         </p>
       </div>
