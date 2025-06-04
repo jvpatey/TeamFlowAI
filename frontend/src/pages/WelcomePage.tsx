@@ -72,16 +72,17 @@ export function WelcomePage() {
           </div>
 
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-onyx dark:text-timberwolf mb-3 sm:mb-4 px-2">
-            Think, plan, and track
+            Create, organize, and automate
             <br />
             <span className="text-gray-500 dark:text-gray-400">
-              all in one place
+              your workflow
             </span>
           </h2>
 
           <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300 mb-6 sm:mb-8 max-w-2xl mx-auto px-4">
-            A smarter way to write, organize, and plan — with docs, meetings,
-            and tasks all in one AI-powered workspace.
+            Streamline your productivity with AI-powered tools — from
+            intelligent meeting summaries to smart task management and seamless
+            document creation.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-3 justify-center mb-6 sm:mb-8 px-4">
