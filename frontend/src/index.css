@@ -3,6 +3,51 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Custom dark theme styles */
+@layer base {
+  html {
+    @apply dark;
+  }
+
+  body {
+    @apply bg-onyx text-timberwolf;
+  }
+}
+
+/* Welcome page card hover effects */
+.welcome-card {
+  @apply transition-all duration-300 ease-in-out;
+}
+
+.welcome-card:hover {
+  @apply scale-105 shadow-2xl;
+}
+
+.welcome-card:hover .welcome-card-border {
+  @apply opacity-100;
+}
+
+.welcome-card-border {
+  @apply opacity-0 transition-opacity duration-300;
+}
+
+/* Hero section gradient text */
+.hero-gradient {
+  background: linear-gradient(135deg, #44bba4 0%, #3b82f6 50%, #8b5cf6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Feature card icon glow effect */
+.feature-icon {
+  @apply transition-all duration-300;
+}
+
+.feature-icon:hover {
+  filter: drop-shadow(0 0 10px currentColor);
+}
+
 /* Fill from right effect for buttons */
 .btn-fill-right {
   position: relative;
