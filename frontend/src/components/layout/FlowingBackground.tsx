@@ -171,7 +171,7 @@ export function FlowingBackground({ className = "" }: FlowingBackgroundProps) {
           </path>
 
           <path
-            d="M0,600 Q200,400 400,600 T800,600"
+            d="M0,600 Q200,400 400,600 T1200,600"
             stroke="url(#flowGradient1Light)"
             strokeWidth="1.5"
             fill="none"
@@ -179,7 +179,7 @@ export function FlowingBackground({ className = "" }: FlowingBackgroundProps) {
           >
             <animate
               attributeName="d"
-              values="M0,600 Q200,400 400,600 T800,600;M0,600 Q200,800 400,600 T800,600;M0,600 Q200,400 400,600 T800,600"
+              values="M0,600 Q200,400 400,600 T1200,600;M0,600 Q200,800 400,600 T1200,600;M0,600 Q200,400 400,600 T1200,600"
               dur="8s"
               repeatCount="indefinite"
             />
@@ -234,7 +234,7 @@ export function FlowingBackground({ className = "" }: FlowingBackgroundProps) {
           </path>
 
           <path
-            d="M0,600 Q200,400 400,600 T800,600"
+            d="M0,600 Q200,400 400,600 T1200,600"
             stroke="url(#flowGradient1Dark)"
             strokeWidth="2"
             fill="none"
@@ -242,7 +242,7 @@ export function FlowingBackground({ className = "" }: FlowingBackgroundProps) {
           >
             <animate
               attributeName="d"
-              values="M0,600 Q200,400 400,600 T800,600;M0,600 Q200,800 400,600 T800,600;M0,600 Q200,400 400,600 T800,600"
+              values="M0,600 Q200,400 400,600 T1200,600;M0,600 Q200,800 400,600 T1200,600;M0,600 Q200,400 400,600 T1200,600"
               dur="8s"
               repeatCount="indefinite"
             />
