@@ -22,9 +22,17 @@ function AuthModals() {
 // AppContent component to handle the navbar visibility
 function AppContent() {
   const location = useLocation();
-  // Hide the navbar on the welcome page and dashboard page (dashboard renders its own)
-  const hideNavbar =
-    location.pathname === "/" || location.pathname === "/dashboard";
+  // Hide the navbar on pages that render their own navbar inside PageBackground
+  const hideNavbar = [
+    "/",
+    "/dashboard",
+    "/about",
+    "/account",
+    "/smart-docs",
+    "/task-board",
+    "/meeting-summaries",
+  ].includes(location.pathname);
+
   return (
     <>
       {!hideNavbar && <Navbar />}
