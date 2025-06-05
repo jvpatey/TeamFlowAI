@@ -32,10 +32,10 @@ export function AuthOverlay({
         </button>
       </div>
 
-      {/* Main content area - proper scrolling with centering */}
+      {/* Main content area - centered vertically */}
       <div className="relative z-10 flex-1 overflow-y-auto">
         <div className="min-h-full flex items-center justify-center p-6">
-          <div className="w-full max-w-md py-8">{children}</div>
+          <div className="w-full max-w-md">{children}</div>
         </div>
       </div>
     </div>
