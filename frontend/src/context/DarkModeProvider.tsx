@@ -15,22 +15,25 @@ const DarkModeContext = createContext<DarkModeContextProps | undefined>(
 export function DarkModeProvider({ children }: { children: React.ReactNode }) {
   const [darkMode, setDarkMode] = useState(() => {
     if (typeof window !== "undefined") {
+      // Default to dark mode
       return (
-        localStorage.getItem("theme") === "dark" ||
-        (!localStorage.getItem("theme") &&
-          window.matchMedia("(prefers-color-scheme: dark)").matches)
+        localStorage.getItem("theme") !== "light" &&
+        (localStorage.getItem("theme") === "dark" ||
+          !localStorage.getItem("theme"))
       );
     }
-    return false;
+    return true;
   });
 
   // Define the useEffect hook to update the dark mode
   useEffect(() => {
     if (darkMode) {
       document.documentElement.classList.add("dark");
+      document.documentElement.setAttribute("data-theme", "dark");
       localStorage.setItem("theme", "dark");
     } else {
       document.documentElement.classList.remove("dark");
+      document.documentElement.setAttribute("data-theme", "light");
       localStorage.setItem("theme", "light");
     }
   }, [darkMode]);
