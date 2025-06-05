@@ -91,13 +91,13 @@ export function WelcomePage() {
           <div className="flex flex-col sm:flex-row gap-3 justify-center mb-6 sm:mb-8 px-4">
             <button
               onClick={openSignUp}
-              className="btn btn-md sm:btn-lg bg-white/60 dark:bg-gray-700/60 hover:bg-gray-50/80 dark:hover:bg-gray-600/80 backdrop-blur-md text-brand-dark dark:text-white border-2 border-brand-primary hover:border-brand-secondary px-4 sm:px-6 py-2 rounded-lg font-semibold transition-all duration-300 shadow-lg transform hover:scale-105 w-full sm:w-auto"
+              className="btn btn-md sm:btn-lg bg-transparent hover:bg-brand-primary/10 dark:hover:bg-brand-primary/20 text-brand-dark dark:text-white border-2 border-brand-primary hover:border-brand-secondary px-4 sm:px-6 py-2 rounded-lg font-semibold transition-all duration-300 shadow-lg transform hover:scale-105 w-full sm:w-auto"
             >
               Get started for free
             </button>
             <button
               onClick={openSignIn}
-              className="btn btn-md sm:btn-lg bg-gray-100/60 dark:bg-gray-700/60 hover:bg-gray-200/80 dark:hover:bg-gray-600/80 backdrop-blur-md text-brand-dark dark:text-white border-2 border-brand-primary hover:border-brand-secondary px-4 sm:px-6 py-2 rounded-lg font-semibold transition-all duration-300 shadow-lg transform hover:scale-105 w-full sm:w-auto"
+              className="btn btn-md sm:btn-lg bg-transparent hover:bg-brand-primary/10 dark:hover:bg-brand-primary/20 text-brand-dark dark:text-white border-2 border-brand-primary hover:border-brand-secondary px-4 sm:px-6 py-2 rounded-lg font-semibold transition-all duration-300 shadow-lg transform hover:scale-105 w-full sm:w-auto"
             >
               Sign in
             </button>

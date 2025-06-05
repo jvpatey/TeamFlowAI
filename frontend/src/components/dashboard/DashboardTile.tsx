@@ -24,7 +24,7 @@ export function DashboardTile({
 }: DashboardTileProps) {
   return (
     <button
-      className={`group bg-white/50 dark:bg-gray-800/50 backdrop-blur-md shadow-xl border-2 border-transparent ${borderColor} transition-all duration-300 transform hover:scale-105 flex flex-col items-center justify-center aspect-square max-w-xs w-full p-6 rounded-2xl focus:outline-none`}
+      className={`group bg-white/60 dark:bg-gray-800/60 hover:bg-white/80 dark:hover:bg-gray-800/80 shadow-xl border-2 border-transparent ${borderColor} transition-all duration-300 transform hover:scale-105 flex flex-col items-center justify-center aspect-square max-w-xs w-full p-6 rounded-2xl focus:outline-none`}
       onClick={onClick}
       type="button"
     >

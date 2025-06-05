@@ -20,7 +20,7 @@ export function FeatureCard({
 }: FeatureCardProps) {
   return (
     <div
-      className={`card bg-white/50 dark:bg-gray-800/50 backdrop-blur-md shadow-xl border-2 border-transparent ${borderColor} transition-all duration-300 ${
+      className={`card bg-white/50 dark:bg-gray-800/50 hover:bg-white/70 dark:hover:bg-gray-800/70 shadow-xl border-2 border-transparent ${borderColor} transition-all duration-300 ${
         hasScaleEffect ? "transform hover:scale-105" : ""
       }`}
     >
