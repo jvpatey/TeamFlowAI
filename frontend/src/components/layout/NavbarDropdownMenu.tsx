@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import { useClerk } from "@clerk/clerk-react";
 import {
   FaUser,
   FaThLarge,
@@ -10,13 +9,13 @@ import {
   FaSignOutAlt,
 } from "react-icons/fa";
 
-export function NavbarDropdownMenu() {
-  const { signOut } = useClerk();
+interface NavbarDropdownMenuProps {
+  onSignOutClick: () => void;
+}
 
-  const handleSignOut = () => {
-    signOut({ redirectUrl: "/" });
-  };
-
+export function NavbarDropdownMenu({
+  onSignOutClick,
+}: NavbarDropdownMenuProps) {
   return (
     <ul
       tabIndex={1}
@@ -91,7 +90,7 @@ export function NavbarDropdownMenu() {
       <div className="divider my-2 opacity-30"></div>
       <li>
         <button
-          onClick={handleSignOut}
+          onClick={onSignOutClick}
           className="flex items-center gap-3 text-brand-dark dark:text-brand-text rounded-lg p-3 transition-all duration-300 hover:bg-feature-red-500/20 dark:hover:bg-feature-red-400/20 hover:scale-105 hover:shadow-md w-full text-left"
         >
           <div className="w-8 h-8 bg-feature-red-100 dark:bg-feature-red-900 rounded-lg flex items-center justify-center text-feature-red-600 dark:text-feature-red-400">
