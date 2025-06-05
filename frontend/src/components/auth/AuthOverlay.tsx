@@ -17,16 +17,18 @@ export function AuthOverlay({
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 min-h-screen bg-darkBg flex flex-col">
+    <div className="fixed inset-0 z-50 min-h-screen bg-platinum dark:bg-onyx flex flex-col">
       {/* Flowing Background */}
       <FlowingBackground />
 
       {/* Header with close button */}
       <div className="relative z-10 flex justify-between items-center p-6">
-        <h1 className="text-2xl font-bold text-white">{title}</h1>
+        <h1 className="text-2xl font-bold text-onyx dark:text-timberwolf">
+          {title}
+        </h1>
         <button
           onClick={onClose}
-          className="text-white hover:text-keppel transition-colors duration-200 text-xl font-bold"
+          className="text-onyx dark:text-timberwolf hover:text-keppel transition-colors duration-200 text-xl font-bold"
         >
           ✕
         </button>
