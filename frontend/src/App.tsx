@@ -3,8 +3,8 @@ import AppRouter from "./Router";
 import { DarkModeProvider } from "./context/DarkModeProvider";
 import { AuthModalProvider, useAuthModal } from "./context/AuthModalProvider";
 import { Navbar } from "./components/layout/Navbar";
-import { SignInModal } from "./components/auth/SignInModal";
-import { SignUpModal } from "./components/auth/SignUpModal";
+import { SignInOverlay } from "./components/auth/SignInOverlay";
+import { SignUpOverlay } from "./components/auth/SignUpOverlay";
 
 // AuthModals component to render the modals
 function AuthModals() {
@@ -13,8 +13,8 @@ function AuthModals() {
 
   return (
     <>
-      <SignInModal isOpen={isSignInOpen} onClose={closeSignIn} />
-      <SignUpModal isOpen={isSignUpOpen} onClose={closeSignUp} />
+      <SignInOverlay isOpen={isSignInOpen} onClose={closeSignIn} />
+      <SignUpOverlay isOpen={isSignUpOpen} onClose={closeSignUp} />
     </>
   );
 }

@@ -1,4 +1,4 @@
-export { AuthModal } from "./AuthModal";
-export { SignInModal } from "./SignInModal";
-export { SignUpModal } from "./SignUpModal";
+export { AuthOverlay } from "./AuthOverlay";
+export { SignInOverlay } from "./SignInOverlay";
+export { SignUpOverlay } from "./SignUpOverlay";
 export { ProtectedRoute } from "./ProtectedRoute";
