@@ -20,7 +20,7 @@ export function NavbarDropdownMenu() {
   return (
     <ul
       tabIndex={1}
-      className="menu menu-md dropdown-content mt-3 z-[50] p-3 shadow-xl bg-white/30 dark:bg-gray-800/30 backdrop-blur-md border border-white/10 dark:border-gray-700/10 rounded-2xl w-56"
+      className="menu menu-md dropdown-content mt-3 z-[9999] p-3 shadow-xl bg-white/30 dark:bg-gray-800/30 backdrop-blur-md border border-white/10 dark:border-gray-700/10 rounded-2xl w-56"
     >
       <li>
         <Link

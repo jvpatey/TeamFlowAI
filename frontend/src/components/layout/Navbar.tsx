@@ -7,10 +7,10 @@ import { NavbarDropdownMenu } from "./NavbarDropdownMenu";
 // Navbar component for nav throughout the app
 export function Navbar() {
   return (
-    <div className="flex items-center justify-between w-full h-16 px-4 relative z-10">
+    <div className="flex items-center justify-between w-full h-16 px-4 relative z-50">
       {/* Left side - Dropdown menu */}
       <div className="flex-none">
-        <div className="dropdown">
+        <div className="dropdown relative z-50">
           <div
             tabIndex={1}
             role="button"
