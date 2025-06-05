@@ -7,7 +7,7 @@ export function DarkModeToggle() {
   return (
     <button
       onClick={toggleDarkMode}
-      className="p-2 rounded-full bg-gray-200 dark:bg-onyx text-onyx dark:text-timberwolf shadow hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors hover:text-keppel dark:hover:text-keppel"
+      className="p-2 rounded-full bg-transparent hover:bg-keppel/20 dark:hover:bg-keppel/30 text-onyx dark:text-timberwolf transition-all duration-300 hover:text-keppel dark:hover:text-keppel hover:scale-110 border border-transparent hover:border-keppel/40"
       aria-label="Toggle dark mode"
       type="button"
     >
