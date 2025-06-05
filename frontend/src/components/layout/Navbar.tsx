@@ -34,46 +34,52 @@ export function Navbar() {
             <div
               tabIndex={1}
               role="button"
-              className="p-2 text-brand-dark dark:text-brand-text bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm hover:bg-brand-primary/20 dark:hover:bg-brand-primary/30 hover:scale-110 transition-all duration-300 rounded-full border border-transparent hover:border-brand-primary/40 shadow-sm"
+              className="p-1.5 sm:p-2 text-brand-dark dark:text-brand-text bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm hover:bg-brand-primary/20 dark:hover:bg-brand-primary/30 hover:scale-110 transition-all duration-300 rounded-full border border-transparent hover:border-brand-primary/40 shadow-sm"
             >
-              <FaBars size={20} color="currentColor" />
+              <div className="w-4 h-4 sm:w-5 sm:h-5">
+                <FaBars size="100%" color="currentColor" />
+              </div>
             </div>
             <NavbarDropdownMenu onSignOutClick={handleSignOutClick} />
           </div>
         </div>
 
         {/* Center - Logo */}
-        <div className="flex-1 flex justify-center">
+        <div className="absolute left-1/2 transform -translate-x-1/2">
           <Link
             to="/dashboard"
-            className="flex items-center gap-2 transition-all duration-300 hover:scale-105 group"
+            className="flex items-center gap-2 sm:gap-3 transition-all duration-300 hover:scale-105 group"
           >
             <img
               src={logoNoBg}
               alt="TeamFlowAI Logo"
-              className="w-8 h-8 object-contain"
+              className="w-8 h-8 sm:w-10 sm:h-10 object-contain"
             />
-            <span className="text-2xl font-bold text-brand-dark dark:text-brand-text">
+            <span className="text-xl sm:text-3xl font-bold text-brand-dark dark:text-brand-text">
               TeamFlowAI
             </span>
           </Link>
         </div>
 
         {/* Right side - User, Sign Out, and Dark Mode */}
-        <div className="flex-none flex items-center gap-3">
+        <div className="flex-none flex items-center gap-2 sm:gap-3">
           <Link
             to="/account"
-            className="p-2 text-brand-dark dark:text-brand-text bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm hover:bg-brand-primary/20 dark:hover:bg-brand-primary/30 hover:scale-110 transition-all duration-300 rounded-full border border-transparent hover:border-brand-primary/40 shadow-sm"
+            className="p-1.5 sm:p-2 text-brand-dark dark:text-brand-text bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm hover:bg-brand-primary/20 dark:hover:bg-brand-primary/30 hover:scale-110 transition-all duration-300 rounded-full border border-transparent hover:border-brand-primary/40 shadow-sm"
             aria-label="User menu"
           >
-            <FaUser size={20} />
+            <div className="w-4 h-4 sm:w-5 sm:h-5">
+              <FaUser size="100%" />
+            </div>
           </Link>
           <button
             onClick={handleSignOutClick}
-            className="p-2 text-brand-dark dark:text-brand-text bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm hover:bg-feature-red-500/20 dark:hover:bg-feature-red-400/20 hover:scale-110 transition-all duration-300 rounded-full border border-transparent hover:border-feature-red-400/40 shadow-sm"
+            className="p-1.5 sm:p-2 text-brand-dark dark:text-brand-text bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm hover:bg-feature-red-500/20 dark:hover:bg-feature-red-400/20 hover:scale-110 transition-all duration-300 rounded-full border border-transparent hover:border-feature-red-400/40 shadow-sm"
             aria-label="Sign out"
           >
-            <FaSignOutAlt size={20} />
+            <div className="w-4 h-4 sm:w-5 sm:h-5">
+              <FaSignOutAlt size="100%" />
+            </div>
           </button>
           <div className="bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm rounded-full border border-transparent hover:border-brand-primary/40 transition-all duration-300">
             <DarkModeToggle />

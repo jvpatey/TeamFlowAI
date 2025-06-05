@@ -7,36 +7,36 @@ export function FlowingBackground({ className = "" }: FlowingBackgroundProps) {
   return (
     <div className={`absolute inset-0 overflow-hidden ${className}`}>
       {/* Main flowing shape */}
-      <div className="absolute -top-40 -right-40 w-96 h-96 bg-gradient-to-br from-brand-primary/20 via-feature-purple-500/15 to-feature-blue-500/20 dark:from-brand-primary/40 dark:via-feature-purple-500/35 dark:to-feature-blue-500/40 rounded-full blur-3xl animate-pulse"></div>
+      <div className="absolute -top-40 -right-40 w-96 h-96 bg-gradient-to-br from-brand-primary/30 via-feature-purple-500/25 to-feature-blue-500/30 dark:from-brand-primary/40 dark:via-feature-purple-500/35 dark:to-feature-blue-500/40 rounded-full blur-3xl animate-pulse"></div>
       <div
-        className="absolute -bottom-40 -left-40 w-96 h-96 bg-gradient-to-tr from-feature-blue-500/20 via-brand-primary/15 to-feature-purple-500/20 dark:from-feature-blue-500/40 dark:via-brand-primary/35 dark:to-feature-purple-500/40 rounded-full blur-3xl animate-pulse"
+        className="absolute -bottom-40 -left-40 w-96 h-96 bg-gradient-to-tr from-feature-blue-500/30 via-brand-primary/25 to-feature-purple-500/30 dark:from-feature-blue-500/40 dark:via-brand-primary/35 dark:to-feature-purple-500/40 rounded-full blur-3xl animate-pulse"
         style={{ animationDelay: "1s" }}
       ></div>
 
       {/* Additional bold shapes */}
       <div
-        className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-gradient-to-r from-brand-primary/15 via-transparent to-feature-purple-500/15 dark:from-brand-primary/25 dark:via-transparent dark:to-feature-purple-500/25 rounded-full blur-2xl animate-pulse"
+        className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-gradient-to-r from-brand-primary/25 via-transparent to-feature-purple-500/25 dark:from-brand-primary/25 dark:via-transparent dark:to-feature-purple-500/25 rounded-full blur-2xl animate-pulse"
         style={{ animationDuration: "4s" }}
       ></div>
 
       {/* Flowing organic shapes */}
       <div
-        className="absolute top-1/4 left-1/4 w-64 h-64 bg-gradient-to-br from-brand-primary/20 to-feature-blue-500/15 dark:from-brand-primary/30 dark:to-feature-blue-500/20 rounded-full blur-2xl animate-bounce"
+        className="absolute top-1/4 left-1/4 w-64 h-64 bg-gradient-to-br from-brand-primary/30 to-feature-blue-500/25 dark:from-brand-primary/30 dark:to-feature-blue-500/20 rounded-full blur-2xl animate-bounce"
         style={{ animationDuration: "8s" }}
       ></div>
       <div
-        className="absolute bottom-1/4 right-1/4 w-48 h-48 bg-gradient-to-tl from-feature-purple-500/25 to-brand-primary/15 dark:from-feature-purple-500/35 dark:to-brand-primary/25 rounded-full blur-2xl animate-bounce"
+        className="absolute bottom-1/4 right-1/4 w-48 h-48 bg-gradient-to-tl from-feature-purple-500/35 to-brand-primary/25 dark:from-feature-purple-500/35 dark:to-brand-primary/25 rounded-full blur-2xl animate-bounce"
         style={{ animationDuration: "6s", animationDelay: "2s" }}
       ></div>
 
       {/* Stronger mid-layer shapes */}
       <div
-        className="absolute top-1/3 right-1/3 w-32 h-32 bg-gradient-to-bl from-feature-blue-500/25 to-transparent dark:from-feature-blue-500/40 dark:to-transparent rounded-full blur-xl animate-pulse"
+        className="absolute top-1/3 right-1/3 w-32 h-32 bg-gradient-to-bl from-feature-blue-500/35 to-transparent dark:from-feature-blue-500/40 dark:to-transparent rounded-full blur-xl animate-pulse"
         style={{ animationDuration: "7s", animationDelay: "3s" }}
       ></div>
 
       {/* Enhanced grid pattern */}
-      <div className="absolute inset-0 opacity-20 dark:opacity-30">
+      <div className="absolute inset-0 opacity-30 dark:opacity-30">
         <div
           className="absolute inset-0"
           style={{
@@ -48,7 +48,7 @@ export function FlowingBackground({ className = "" }: FlowingBackgroundProps) {
 
       {/* Flowing lines */}
       <svg
-        className="absolute inset-0 w-full h-full opacity-30 dark:opacity-50"
+        className="absolute inset-0 w-full h-full opacity-40 dark:opacity-50"
         preserveAspectRatio="none"
         viewBox="0 0 1200 800"
       >
@@ -63,15 +63,15 @@ export function FlowingBackground({ className = "" }: FlowingBackgroundProps) {
           >
             <stop
               offset="0%"
-              style={{ stopColor: "#44BBA4", stopOpacity: 0.4 }}
+              style={{ stopColor: "#44BBA4", stopOpacity: 0.7 }}
             />
             <stop
               offset="50%"
-              style={{ stopColor: "#8b5cf6", stopOpacity: 0.3 }}
+              style={{ stopColor: "#8b5cf6", stopOpacity: 0.6 }}
             />
             <stop
               offset="100%"
-              style={{ stopColor: "#3b82f6", stopOpacity: 0.4 }}
+              style={{ stopColor: "#3b82f6", stopOpacity: 0.7 }}
             />
           </linearGradient>
           <linearGradient
@@ -83,15 +83,15 @@ export function FlowingBackground({ className = "" }: FlowingBackgroundProps) {
           >
             <stop
               offset="0%"
-              style={{ stopColor: "#3b82f6", stopOpacity: 0.4 }}
+              style={{ stopColor: "#3b82f6", stopOpacity: 0.7 }}
             />
             <stop
               offset="50%"
-              style={{ stopColor: "#44BBA4", stopOpacity: 0.3 }}
+              style={{ stopColor: "#44BBA4", stopOpacity: 0.6 }}
             />
             <stop
               offset="100%"
-              style={{ stopColor: "#8b5cf6", stopOpacity: 0.4 }}
+              style={{ stopColor: "#8b5cf6", stopOpacity: 0.7 }}
             />
           </linearGradient>
 
@@ -143,7 +143,7 @@ export function FlowingBackground({ className = "" }: FlowingBackgroundProps) {
           <path
             d="M0,400 Q300,200 600,400 T1200,400"
             stroke="url(#flowGradient1Light)"
-            strokeWidth="2.5"
+            strokeWidth="3"
             fill="none"
             className="animate-pulse"
           >
@@ -158,7 +158,7 @@ export function FlowingBackground({ className = "" }: FlowingBackgroundProps) {
           <path
             d="M0,300 Q400,100 800,300 T1200,300"
             stroke="url(#flowGradient2Light)"
-            strokeWidth="2"
+            strokeWidth="2.5"
             fill="none"
             className="animate-pulse"
           >
@@ -173,9 +173,9 @@ export function FlowingBackground({ className = "" }: FlowingBackgroundProps) {
           <path
             d="M0,600 Q200,400 400,600 T1200,600"
             stroke="url(#flowGradient1Light)"
-            strokeWidth="1.5"
+            strokeWidth="2"
             fill="none"
-            opacity="0.6"
+            opacity="0.7"
           >
             <animate
               attributeName="d"
@@ -190,7 +190,7 @@ export function FlowingBackground({ className = "" }: FlowingBackgroundProps) {
             stroke="url(#flowGradient2Light)"
             strokeWidth="1.5"
             fill="none"
-            opacity="0.5"
+            opacity="0.6"
           >
             <animate
               attributeName="d"
