@@ -14,7 +14,7 @@ export function Navbar() {
           <div
             tabIndex={1}
             role="button"
-            className="p-2 text-onyx dark:text-timberwolf bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm hover:bg-keppel/20 dark:hover:bg-keppel/30 hover:scale-110 transition-all duration-300 rounded-full border border-transparent hover:border-keppel/40 shadow-sm"
+            className="p-2 text-brand-dark dark:text-brand-text bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm hover:bg-brand-primary/20 dark:hover:bg-brand-primary/30 hover:scale-110 transition-all duration-300 rounded-full border border-transparent hover:border-brand-primary/40 shadow-sm"
           >
             <FaBars size={20} color="currentColor" />
           </div>
@@ -33,7 +33,7 @@ export function Navbar() {
             alt="TeamFlowAI Logo"
             className="w-8 h-8 object-contain"
           />
-          <span className="text-2xl font-bold text-onyx dark:text-timberwolf">
+          <span className="text-2xl font-bold text-brand-dark dark:text-brand-text">
             TeamFlowAI
           </span>
         </Link>
@@ -43,12 +43,12 @@ export function Navbar() {
       <div className="flex-none flex items-center gap-3">
         <Link
           to="/account"
-          className="p-2 text-onyx dark:text-timberwolf bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm hover:bg-keppel/20 dark:hover:bg-keppel/30 hover:scale-110 transition-all duration-300 rounded-full border border-transparent hover:border-keppel/40 shadow-sm"
+          className="p-2 text-brand-dark dark:text-brand-text bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm hover:bg-brand-primary/20 dark:hover:bg-brand-primary/30 hover:scale-110 transition-all duration-300 rounded-full border border-transparent hover:border-brand-primary/40 shadow-sm"
           aria-label="User menu"
         >
           <FaUser size={20} />
         </Link>
-        <div className="bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm rounded-full border border-transparent hover:border-keppel/40 transition-all duration-300">
+        <div className="bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm rounded-full border border-transparent hover:border-brand-primary/40 transition-all duration-300">
           <DarkModeToggle />
         </div>
       </div>

@@ -13,7 +13,7 @@ export function ProtectedRoute({ children }: ProtectedRouteProps) {
   if (!isLoaded) {
     return (
       <div className="flex items-center justify-center min-h-screen">
-        <div className="loading loading-spinner loading-lg text-keppel"></div>
+        <div className="loading loading-spinner loading-lg text-brand-primary"></div>
       </div>
     );
   }

@@ -30,7 +30,7 @@ export function FeatureCard({
         >
           <div className={iconColor}>{icon}</div>
         </div>
-        <h3 className="text-lg sm:text-xl font-bold text-onyx dark:text-timberwolf mb-2 sm:mb-3">
+        <h3 className="text-lg sm:text-xl font-bold text-brand-dark dark:text-brand-text mb-2 sm:mb-3">
           {title}
         </h3>
         <p className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">

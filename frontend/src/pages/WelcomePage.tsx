@@ -14,9 +14,10 @@ const features = [
     title: "Smart Documents",
     description:
       "Create and organize documents with AI assistance to boost your productivity and collaboration.",
-    borderColor: "hover:border-blue-500 dark:hover:border-blue-400",
-    iconBgColor: "bg-blue-100 dark:bg-blue-900",
-    iconColor: "text-blue-600 dark:text-blue-400",
+    borderColor:
+      "hover:border-feature-blue-500 dark:hover:border-feature-blue-400",
+    iconBgColor: "bg-feature-blue-100 dark:bg-feature-blue-900",
+    iconColor: "text-feature-blue-600 dark:text-feature-blue-400",
     hasScaleEffect: false,
   },
   {
@@ -25,9 +26,10 @@ const features = [
     title: "Task Management",
     description:
       "Track your tasks and projects efficiently with visual boards and AI-powered insights.",
-    borderColor: "hover:border-green-500 dark:hover:border-green-400",
-    iconBgColor: "bg-green-100 dark:bg-green-900",
-    iconColor: "text-green-600 dark:text-green-400",
+    borderColor:
+      "hover:border-feature-green-500 dark:hover:border-feature-green-400",
+    iconBgColor: "bg-feature-green-100 dark:bg-feature-green-900",
+    iconColor: "text-feature-green-600 dark:text-feature-green-400",
     hasScaleEffect: true,
   },
   {
@@ -36,9 +38,10 @@ const features = [
     title: "Meeting Summaries",
     description:
       "Generate intelligent meeting summaries and action items automatically with AI.",
-    borderColor: "hover:border-purple-500 dark:hover:border-purple-400",
-    iconBgColor: "bg-purple-100 dark:bg-purple-900",
-    iconColor: "text-purple-600 dark:text-purple-400",
+    borderColor:
+      "hover:border-feature-purple-500 dark:hover:border-feature-purple-400",
+    iconBgColor: "bg-feature-purple-100 dark:bg-feature-purple-900",
+    iconColor: "text-feature-purple-600 dark:text-feature-purple-400",
     hasScaleEffect: false,
   },
 ];
@@ -66,12 +69,12 @@ export function WelcomePage() {
               alt="TeamFlowAI Logo"
               className="w-12 h-12 sm:w-14 sm:h-14 object-contain"
             />
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-onyx dark:text-timberwolf">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-brand-dark dark:text-brand-text">
               TeamFlowAI
             </h1>
           </div>
 
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-onyx dark:text-timberwolf mb-3 sm:mb-4 px-2">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-brand-dark dark:text-brand-text mb-3 sm:mb-4 px-2">
             Create, organize, and automate
             <br />
             <span className="text-gray-500 dark:text-gray-400">
@@ -88,13 +91,13 @@ export function WelcomePage() {
           <div className="flex flex-col sm:flex-row gap-3 justify-center mb-6 sm:mb-8 px-4">
             <button
               onClick={openSignUp}
-              className="btn btn-md sm:btn-lg bg-white/60 dark:bg-gray-700/60 hover:bg-gray-50/80 dark:hover:bg-gray-600/80 backdrop-blur-md text-onyx dark:text-white border-2 border-keppel hover:border-keppelLight px-4 sm:px-6 py-2 rounded-lg font-semibold transition-all duration-300 shadow-lg transform hover:scale-105 w-full sm:w-auto"
+              className="btn btn-md sm:btn-lg bg-white/60 dark:bg-gray-700/60 hover:bg-gray-50/80 dark:hover:bg-gray-600/80 backdrop-blur-md text-brand-dark dark:text-white border-2 border-brand-primary hover:border-brand-secondary px-4 sm:px-6 py-2 rounded-lg font-semibold transition-all duration-300 shadow-lg transform hover:scale-105 w-full sm:w-auto"
             >
               Get started for free
             </button>
             <button
               onClick={openSignIn}
-              className="btn btn-md sm:btn-lg bg-gray-100/60 dark:bg-gray-700/60 hover:bg-gray-200/80 dark:hover:bg-gray-600/80 backdrop-blur-md text-onyx dark:text-white border-2 border-keppel hover:border-keppelLight px-4 sm:px-6 py-2 rounded-lg font-semibold transition-all duration-300 shadow-lg transform hover:scale-105 w-full sm:w-auto"
+              className="btn btn-md sm:btn-lg bg-gray-100/60 dark:bg-gray-700/60 hover:bg-gray-200/80 dark:hover:bg-gray-600/80 backdrop-blur-md text-brand-dark dark:text-white border-2 border-brand-primary hover:border-brand-secondary px-4 sm:px-6 py-2 rounded-lg font-semibold transition-all duration-300 shadow-lg transform hover:scale-105 w-full sm:w-auto"
             >
               Sign in
             </button>

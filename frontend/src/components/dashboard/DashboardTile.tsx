@@ -17,9 +17,9 @@ export function DashboardTile({
   icon,
   title,
   subtitle,
-  iconBgColor = "bg-blue-100 dark:bg-blue-900",
-  iconColor = "text-blue-600 dark:text-blue-400",
-  borderColor = "hover:border-blue-500 dark:hover:border-blue-400",
+  iconBgColor = "bg-feature-blue-100 dark:bg-feature-blue-900",
+  iconColor = "text-feature-blue-600 dark:text-feature-blue-400",
+  borderColor = "hover:border-feature-blue-500 dark:hover:border-feature-blue-400",
   onClick,
 }: DashboardTileProps) {
   return (
@@ -34,7 +34,7 @@ export function DashboardTile({
         <div className={`text-2xl sm:text-3xl ${iconColor}`}>{icon}</div>
       </div>
       <div className="text-center">
-        <div className="text-lg sm:text-xl font-bold text-onyx dark:text-timberwolf mb-1 sm:mb-2">
+        <div className="text-lg sm:text-xl font-bold text-brand-dark dark:text-brand-text mb-1 sm:mb-2">
           {title}
         </div>
         {subtitle && (
