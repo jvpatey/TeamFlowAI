@@ -2,13 +2,29 @@ import { PageBackground } from "../components/layout/PageBackground";
 import { FlowingBackground } from "../components/layout/FlowingBackground";
 import { Navbar } from "../components/layout/Navbar";
 import { useUser } from "@clerk/clerk-react";
-import { FaCamera, FaUser, FaEnvelope, FaEdit } from "react-icons/fa";
+import {
+  FaCamera,
+  FaUser,
+  FaEnvelope,
+  FaEdit,
+  FaSave,
+  FaTimes,
+} from "react-icons/fa";
 import { useState } from "react";
 
 export default function AccountPage() {
   const { user, isLoaded } = useUser();
   const [isEditingPicture, setIsEditingPicture] = useState(false);
   const [customImageUrl, setCustomImageUrl] = useState("");
+  const [isEditingProfile, setIsEditingProfile] = useState(false);
+  const [editedFirstName, setEditedFirstName] = useState("");
+  const [editedLastName, setEditedLastName] = useState("");
+  const [editedEmail, setEditedEmail] = useState("");
+
+  // Check if user signed up with OAuth (external account) or username/password
+  const isOAuthUser =
+    user?.externalAccounts && user.externalAccounts.length > 0;
+  const canEditProfile = !isOAuthUser;
 
   if (!isLoaded) {
     return (
@@ -43,6 +59,40 @@ export default function AccountPage() {
         console.error("Error removing profile image:", error);
       }
     }
+  };
+
+  const handleEditProfile = () => {
+    setEditedFirstName(user?.firstName || "");
+    setEditedLastName(user?.lastName || "");
+    setEditedEmail(user?.primaryEmailAddress?.emailAddress || "");
+    setIsEditingProfile(true);
+  };
+
+  const handleSaveProfile = async () => {
+    if (user) {
+      try {
+        await user.update({
+          firstName: editedFirstName,
+          lastName: editedLastName,
+        });
+
+        // Update email if it changed
+        if (editedEmail !== user.primaryEmailAddress?.emailAddress) {
+          await user.createEmailAddress({ email: editedEmail });
+        }
+
+        setIsEditingProfile(false);
+      } catch (error) {
+        console.error("Error updating profile:", error);
+      }
+    }
+  };
+
+  const handleCancelEdit = () => {
+    setIsEditingProfile(false);
+    setEditedFirstName("");
+    setEditedLastName("");
+    setEditedEmail("");
   };
 
   return (
@@ -134,6 +184,39 @@ export default function AccountPage() {
               )}
             </div>
 
+            {/* Edit Profile Button */}
+            {canEditProfile && !isEditingProfile && (
+              <div className="flex justify-center mb-6">
+                <button
+                  onClick={handleEditProfile}
+                  className="bg-brand-primary hover:bg-brand-secondary text-white font-medium py-2 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 flex items-center gap-2"
+                >
+                  <FaEdit />
+                  Edit Profile
+                </button>
+              </div>
+            )}
+
+            {/* Save/Cancel Buttons */}
+            {isEditingProfile && (
+              <div className="flex justify-center gap-3 mb-6">
+                <button
+                  onClick={handleSaveProfile}
+                  className="bg-feature-green-500 hover:bg-feature-green-600 text-white font-medium py-2 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 flex items-center gap-2"
+                >
+                  <FaSave />
+                  Save Changes
+                </button>
+                <button
+                  onClick={handleCancelEdit}
+                  className="bg-gray-500 hover:bg-gray-600 text-white font-medium py-2 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 flex items-center gap-2"
+                >
+                  <FaTimes />
+                  Cancel
+                </button>
+              </div>
+            )}
+
             {/* User Information */}
             <div className="space-y-6">
               {/* First Name */}
@@ -144,17 +227,19 @@ export default function AccountPage() {
                   </span>
                   First Name
                 </label>
-                <div className="relative">
-                  <input
-                    type="text"
-                    value={user?.firstName || ""}
-                    readOnly
-                    className="w-full px-4 py-3 bg-white/50 dark:bg-gray-700/50 border-2 border-gray-300/60 dark:border-gray-600/60 rounded-lg text-brand-dark dark:text-brand-text cursor-not-allowed transition-all duration-300"
-                  />
-                  <span className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 dark:text-gray-500">
-                    <FaEdit />
-                  </span>
-                </div>
+                <input
+                  type="text"
+                  value={
+                    isEditingProfile ? editedFirstName : user?.firstName || ""
+                  }
+                  onChange={(e) => setEditedFirstName(e.target.value)}
+                  readOnly={!isEditingProfile}
+                  className={`w-full px-4 py-3 border-2 rounded-lg transition-all duration-300 ${
+                    isEditingProfile
+                      ? "bg-white/80 dark:bg-gray-700/60 border-brand-primary/60 hover:border-feature-green-500 focus:border-feature-green-400 dark:hover:border-feature-green-400 dark:focus:border-feature-green-400 text-brand-dark dark:text-brand-text focus:outline-none"
+                      : "bg-white/50 dark:bg-gray-700/50 border-gray-300/60 dark:border-gray-600/60 text-brand-dark dark:text-brand-text cursor-not-allowed"
+                  }`}
+                />
               </div>
 
               {/* Last Name */}
@@ -165,17 +250,19 @@ export default function AccountPage() {
                   </span>
                   Last Name
                 </label>
-                <div className="relative">
-                  <input
-                    type="text"
-                    value={user?.lastName || ""}
-                    readOnly
-                    className="w-full px-4 py-3 bg-white/50 dark:bg-gray-700/50 border-2 border-gray-300/60 dark:border-gray-600/60 rounded-lg text-brand-dark dark:text-brand-text cursor-not-allowed transition-all duration-300"
-                  />
-                  <span className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 dark:text-gray-500">
-                    <FaEdit />
-                  </span>
-                </div>
+                <input
+                  type="text"
+                  value={
+                    isEditingProfile ? editedLastName : user?.lastName || ""
+                  }
+                  onChange={(e) => setEditedLastName(e.target.value)}
+                  readOnly={!isEditingProfile}
+                  className={`w-full px-4 py-3 border-2 rounded-lg transition-all duration-300 ${
+                    isEditingProfile
+                      ? "bg-white/80 dark:bg-gray-700/60 border-brand-primary/60 hover:border-feature-green-500 focus:border-feature-green-400 dark:hover:border-feature-green-400 dark:focus:border-feature-green-400 text-brand-dark dark:text-brand-text focus:outline-none"
+                      : "bg-white/50 dark:bg-gray-700/50 border-gray-300/60 dark:border-gray-600/60 text-brand-dark dark:text-brand-text cursor-not-allowed"
+                  }`}
+                />
               </div>
 
               {/* Email */}
@@ -186,30 +273,44 @@ export default function AccountPage() {
                   </span>
                   Email
                 </label>
-                <div className="relative">
-                  <input
-                    type="email"
-                    value={user?.primaryEmailAddress?.emailAddress || ""}
-                    readOnly
-                    className="w-full px-4 py-3 bg-white/50 dark:bg-gray-700/50 border-2 border-gray-300/60 dark:border-gray-600/60 rounded-lg text-brand-dark dark:text-brand-text cursor-not-allowed transition-all duration-300"
-                  />
-                  <span className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 dark:text-gray-500">
-                    <FaEdit />
-                  </span>
-                </div>
+                <input
+                  type="email"
+                  value={
+                    isEditingProfile
+                      ? editedEmail
+                      : user?.primaryEmailAddress?.emailAddress || ""
+                  }
+                  onChange={(e) => setEditedEmail(e.target.value)}
+                  readOnly={!isEditingProfile}
+                  className={`w-full px-4 py-3 border-2 rounded-lg transition-all duration-300 ${
+                    isEditingProfile
+                      ? "bg-white/80 dark:bg-gray-700/60 border-brand-primary/60 hover:border-feature-green-500 focus:border-feature-green-400 dark:hover:border-feature-green-400 dark:focus:border-feature-green-400 text-brand-dark dark:text-brand-text focus:outline-none"
+                      : "bg-white/50 dark:bg-gray-700/50 border-gray-300/60 dark:border-gray-600/60 text-brand-dark dark:text-brand-text cursor-not-allowed"
+                  }`}
+                />
               </div>
             </div>
 
             {/* Account Actions */}
             <div className="mt-8 pt-6 border-t border-gray-200/30 dark:border-gray-700/30">
               <div className="text-center">
-                <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
-                  To edit your personal information, please visit your{" "}
-                  <span className="text-brand-primary font-semibold">
-                    authentication provider
-                  </span>{" "}
-                  settings.
-                </p>
+                {!canEditProfile ? (
+                  <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
+                    To edit your personal information, please visit your{" "}
+                    <span className="text-brand-primary font-semibold">
+                      authentication provider
+                    </span>{" "}
+                    settings.
+                  </p>
+                ) : (
+                  <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
+                    You can edit your profile information using the{" "}
+                    <span className="text-brand-primary font-semibold">
+                      Edit Profile
+                    </span>{" "}
+                    button above.
+                  </p>
+                )}
               </div>
             </div>
           </div>
