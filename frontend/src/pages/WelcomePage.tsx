@@ -4,6 +4,7 @@ import { FeatureCard } from "../components/welcome/FeatureCard";
 import { DarkModeToggle } from "../components/DarkModeToggle";
 import { FlowingBackground } from "../components/layout/FlowingBackground";
 import { FaFileAlt, FaTasks, FaMicrophone } from "react-icons/fa";
+import { useState, useEffect } from "react";
 import logoNoBg from "../assets/logo_no_bg.png";
 
 // Feature data for the cards
@@ -49,6 +50,16 @@ const features = [
 // WelcomePage component for the welcome page
 export function WelcomePage() {
   const { openSignIn, openSignUp } = useAuthModal();
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  useEffect(() => {
+    // Trigger animations when component mounts
+    const timer = setTimeout(() => {
+      setIsLoaded(true);
+    }, 100);
+
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <PageBackground className="py-4 sm:py-6 relative overflow-hidden">
@@ -63,7 +74,11 @@ export function WelcomePage() {
       <div className="container mx-auto px-4 min-h-screen flex flex-col justify-center relative z-10">
         {/* Hero Section */}
         <div className="text-center mb-8 sm:mb-10">
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mb-4 sm:mb-6">
+          <div
+            className={`flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mb-4 sm:mb-6 animate-on-load ${
+              isLoaded ? "animate-fade-in-up" : ""
+            }`}
+          >
             <img
               src={logoNoBg}
               alt="TeamFlowAI Logo"
