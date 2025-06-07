@@ -14,6 +14,62 @@
   }
 }
 
+/* Fade-in animations for welcome page */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Animation utility classes */
+.animate-fade-in {
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+/* Animation delays for staggered effect */
+.animation-delay-200 {
+  animation-delay: 0.2s;
+}
+
+.animation-delay-400 {
+  animation-delay: 0.4s;
+}
+
+.animation-delay-600 {
+  animation-delay: 0.6s;
+}
+
+.animation-delay-800 {
+  animation-delay: 0.8s;
+}
+
+.animation-delay-1000 {
+  animation-delay: 1s;
+}
+
+/* Initial hidden state for elements that will animate */
+.animate-on-load {
+  opacity: 0;
+}
+
 /* Welcome page card hover effects */
 .welcome-card {
   @apply transition-all duration-300 ease-in-out;
